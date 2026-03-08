@@ -1,1 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Insurance Fraud Detection</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
 
+<body>
+
+<div class="container">
+
+<h1>Insurance Fraud Detection System</h1>
+
+<form action="/predict" method="post">
+
+<div class="form-grid">
+
+<input type="number" name="months_as_customer" placeholder="Months as Customer" required>
+<input type="number" name="age" placeholder="Age" required>
+<input type="number" name="policy_deductable" placeholder="Policy Deductable" required>
+
+<input type="number" name="policy_annual_premium" placeholder="Policy Annual Premium" required>
+<input type="number" name="umbrella_limit" placeholder="Umbrella Limit" required>
+<input type="number" name="capital_gains" placeholder="Capital Gains" required>
+
+<input type="number" name="capital_loss" placeholder="Capital Loss" required>
+<input type="number" name="incident_hour_of_the_day" placeholder="Incident Hour" required>
+<input type="number" name="number_of_vehicles_involved" placeholder="Vehicles Involved" required>
+
+<input type="number" name="bodily_injuries" placeholder="Bodily Injuries" required>
+<input type="number" name="witnesses" placeholder="Witnesses" required>
+<input type="number" name="total_claim_amount" placeholder="Total Claim Amount" required>
+
+<input type="number" name="injury_claim" placeholder="Injury Claim" required>
+<input type="number" name="property_claim" placeholder="Property Claim" required>
+<input type="number" name="vehicle_claim" placeholder="Vehicle Claim" required>
+
+<input type="number" name="auto_year" placeholder="Vehicle Year" required>
+<input type="number" name="policy_state" placeholder="Policy State (Encoded)" required>
+<input type="number" name="policy_csl" placeholder="Policy CSL (Encoded)" required>
+
+<input type="number" name="incident_type" placeholder="Incident Type (Encoded)" required>
+<input type="number" name="collision_type" placeholder="Collision Type (Encoded)" required>
+<input type="number" name="incident_severity" placeholder="Incident Severity (Encoded)" required>
+
+<input type="number" name="authorities_contacted" placeholder="Authorities Contacted (Encoded)" required>
+<input type="number" name="incident_state" placeholder="Incident State (Encoded)" required>
+<input type="number" name="incident_city" placeholder="Incident City (Encoded)" required>
+
+<input type="number" name="property_damage" placeholder="Property Damage (0/1)" required>
+<input type="number" name="police_report_available" placeholder="Police Report (0/1)" required>
+<input type="number" name="auto_make" placeholder="Auto Make (Encoded)" required>
+
+<input type="number" name="auto_model" placeholder="Auto Model (Encoded)" required>
+<input type="number" name="insured_sex" placeholder="Insured Sex (0/1)" required>
+<input type="number" name="insured_education_level" placeholder="Education Level (Encoded)" required>
+
+<input type="number" name="insured_occupation" placeholder="Occupation (Encoded)" required>
+<input type="number" name="insured_hobbies" placeholder="Hobbies (Encoded)" required>
+<input type="number" name="insured_relationship" placeholder="Relationship (Encoded)" required>
+<input type="number" name="policy_bind_date" placeholder="Policy Bind Date (Encoded)" required>
+
+<input type="number" name="incident_date" placeholder="Incident Date (Encoded)" required>
+
+<input type="number" name="incident_location" placeholder="Incident Location (Encoded)" required>
+
+<input type="number" name="insured_zip" placeholder="Insured Zip Code" required>
+
+<input type="number" name="incident_month" placeholder="Incident Month" required>
+</div>
+
+<button type="submit">Predict Fraud</button>
+
+</form>
+
+<div class="result">
+{{ prediction_text }}
+</div>
+
+</div>
+
+</body>
+</html>
